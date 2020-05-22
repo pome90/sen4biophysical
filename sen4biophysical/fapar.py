@@ -1,7 +1,12 @@
-import tensorflow as tf
 import numpy as np
 
 from sen4biophysical.base import Biophysical
+
+try:
+    import tensorflow as tf
+except ImportError as error:
+    print("You must install manualy tensorflow")
+    raise error
 
 _FAPAR_NORMLIZIATION = [
     [0, 0.25306152],

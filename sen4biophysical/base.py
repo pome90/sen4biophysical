@@ -1,5 +1,10 @@
-import tensorflow as tf
 import numpy as np
+
+try:
+    import tensorflow as tf
+except ImportError as error:
+    print("You must install manualy tensorflow")
+    raise error
 
 _MINMAX = [
     [0,0,0,0,0.00397272701894,0.0166901380821,0.00638807419226,0],
@@ -44,7 +49,7 @@ class Denormalize(tf.keras.layers.Layer):
 
     def compute_output_shape(self, input_shape):
         return input_shape
-        
+
 
 class Biophysical(tf.keras.Model):
     def __init__(self, extreme=None, **kwargs):

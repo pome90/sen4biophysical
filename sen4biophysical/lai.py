@@ -1,5 +1,10 @@
-import tensorflow as tf
 import numpy as np
+
+try:
+    import tensorflow as tf
+except ImportError as error:
+    print("You must install manualy tensorflow")
+    raise error
 
 from sen4biophysical.base import Biophysical
 

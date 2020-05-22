@@ -1,11 +1,15 @@
 from typing import Any, List, Dict
 
-from snappy import ProductIO, Product
-from snappy import GPF
-from snappy import HashMap
-from snappy import jpy
-from snappy import ProductData
-
+try:
+   from snappy import ProductIO, Product
+   from snappy import GPF
+   from snappy import HashMap
+   from snappy import jpy
+   from snappy import ProductData
+except ImportError as error:
+    print("You must install manualy ESA snappy library")
+    raise error
+    
 from geojson import GeoJSON
 import geomet.wkt
 import re

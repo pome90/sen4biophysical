@@ -2,15 +2,15 @@ import geojson
 import os 
 import numpy as np
 
-from sen4biophysical.utils import sentinel2_preprocessing, read_snappy_product, write_snappy_product
-
-from sen4biophysical.lai import LAI
-from sen4biophysical.cab import CAB
-from sen4biophysical.cw import CW
-from sen4biophysical.fapar import FAPAR
-from sen4biophysical.fcover import FCOVER
-
 def biophysical(file_path, dst_dir, aoi_geojson):
+    from sen4biophysical.utils import sentinel2_preprocessing, read_snappy_product, write_snappy_product
+
+    from sen4biophysical.lai import LAI
+    from sen4biophysical.cab import CAB
+    from sen4biophysical.cw import CW
+    from sen4biophysical.fapar import FAPAR
+    from sen4biophysical.fcover import FCOVER
+    
     if aoi_geojson:
         with open(aoi_geojson) as f:
             aoi_geojson = geojson.load(f)
